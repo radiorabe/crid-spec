@@ -11,7 +11,7 @@ for CRIDs that use a dns portion delegated to RaBe.
 - [Versioning](#versioning)
 - [Authority](#authority)
 - [CRID](#crid)
-- [Example](#example)
+- [Examples](#examples)
 
 ## Overview
 
@@ -76,7 +76,7 @@ utc-time      =   6DIGIT [ "." fraction ]   ; < HHMMSS.fraction >
 fraction      =   1*2DIGIT                  ; 0-99
 ```
 
-## Example
+## Examples
 
 This section is non-normative.
 
@@ -84,8 +84,8 @@ This section is non-normative.
 | ---- | ---- | ---- | ---- |
 | Der Morgen (Freitag) | morning show, is a different show for each day of the week, does not have repeats and no individual episodes on the website | `https://rabe.ch/der-morgen-freitag/` | `crid://rabe.ch/v1/der-morgen-freitag` |
 | RaBe Info | news, different on each day of the week, gets repeated once on air and published as podcast, has a page per episode on the web site | `https://rabe.ch/info/`  | `crid://rabe.ch/v1/info` |
-| Klangbecken | Always on show, gets used as a filler if nothing is scheduled and has it's own schedule, no repeats, no episodes | `https://rabe.ch/klangbecken/`  | `crid://rabe.ch/v1/klangbecken` |
-| Klangbecken | A specific point-in-time of the Klanbecken show, usually the start of a new track we play | `https://rabe.ch/klangbecken/ ` | crid://rabe.ch/v1/klangbecken#t=clock=20211201T131200.00Z` |
+| Klangbecken | Always on show, gets used as a filler if nothing is scheduled and has it's own schedule, no repeats, no episodes | `https://rabe.ch/klangbecken/` | `crid://rabe.ch/v1/klangbecken` |
+| Klangbecken | A specific point-in-time of the Klanbecken show, usually the start of a new track we play | `https://rabe.ch/klangbecken/` | `crid://rabe.ch/v1/klangbecken#t=clock=20211201T131200.00Z` |
 
 ## Links
 
@@ -99,4 +99,4 @@ This specification is licensed under the [Creative Commons Attribution-ShareAlik
 
 ## Copyright
 
-Copyright (c) 2021 [Radio Bern RaBe](http://www.rabe.ch)
+Copyright (c) 2022 [Radio Bern RaBe](http://www.rabe.ch)
