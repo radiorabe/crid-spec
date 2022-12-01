@@ -51,14 +51,28 @@ We rely on involved parties to resolve RaBe CRIDs on their own.
 RaBe CRIDs are as simple as possible:
 
 ```text
-crid://rabe/<version>/<data-content>#t=clock:19961108T143720.25Z
+crid://rabe.ch/<version>/<data-content>
 ```
 
 ### `<version>` data part
 
+To allow for future change, all of RaBe's CRIDs are versioned. Versioning SHALL
+follow semantic versioning conventions but is more similar to ie. Kubernetes
+API-versions.
+
 ### `<data-content>` data part
 
+RaBe CRID's define the data-content as the lowercased, normalized and dasherized
+name of a show as the primary URL path segment for a show. These are mostly based
+on the current URL slugs from the RaBe Website. We SHOULD provide further guidance
+on normalization down the road.
+
+For references to specific times, we support a media-frag URI-part and SHOULS use
+the `#t=<iso-timestamp>` format.
+
 ### ABNF definition
+
+RaBe CRIDs SHALL conform to the following ABNF definition.
 
 ```abnf
 crid          =   "crid://rabe.ch/" version "/" data-content
