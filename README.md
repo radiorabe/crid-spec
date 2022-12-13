@@ -64,26 +64,31 @@ API-versions.
 
 RaBe CRID's define the data-content as the lowercased, normalized and dasherized
 name of a show as the primary URL path segment for a show. These are mostly based
-on the current URL slugs from the RaBe Website. We SHOULD provide further guidance
-on normalization down the road.
+on the current URL slugs from the RaBe Website. The show part of a RaBe CRID is
+considered optional, allowing to reference a location in our broadcast without
+prior knowledge.
 
-For references to specific times, we support a media-frag URI-part and SHOULS use
-the `#t=<iso-timestamp>` format.
+We SHOULD provide further guidance on normalization down the road.
+
+For references to specific times, we support a media-frag URI-part and SHOULD use
+the `#t=code=<iso-timestamp>` format as described in the
+[Media Fragments 1.0 (advanced) specification](https://www.w3.org/TR/2011/WD-media-frags-recipes-20111201/).
 
 ### ABNF definition
 
 RaBe CRIDs SHALL conform to the following ABNF definition.
 
 ```abnf
-crid          =   "crid://rabe.ch/" version "/" data-content
+crid          =   "crid://rabe.ch/" version [ "/" data-content ] [ "#" media-frags ]
+
 version       =   "v" 1*DIGIT [ pre-release ]          ; ie. v1, v2,
 pre-release   =   ( "alpha" / "beta" / "rc" ) *DIGIT   ; v1alpha, v1alpha1, v1beta, ...
 
-data-content  =   show-name [ "#" media-frags ]
+data-content  =   show-name
 show-name     =   1*ALPHA     ; show name string derived from website
 media-frags   =   utc-range   ; based on https://www.w3.org/TR/media-frags/
 
-utc-range     =   "t=clock:" utc-date-time [ "-" utc-date-time ]
+utc-range     =   "t=clock=" utc-date-time [ "-" utc-date-time ]
 utc-date-time =   utc-date "T" utc-time "Z"
 utc-date      =   8DIGIT                    ; < YYYYMMDD >
 utc-time      =   6DIGIT [ "." fraction ]   ; < HHMMSS.fraction >
@@ -100,6 +105,7 @@ This section is non-normative.
 | RaBe Info | news, different on each day of the week, gets repeated once on air and published as podcast, has a page per episode on the web site | `https://rabe.ch/info/`  | `crid://rabe.ch/v1/info` |
 | Klangbecken | Always on show, gets used as a filler if nothing is scheduled and has it's own schedule, no repeats, no episodes | `https://rabe.ch/klangbecken/` | `crid://rabe.ch/v1/klangbecken` |
 | Klangbecken | A specific point-in-time of the Klanbecken show, usually the start of a new track we play | `https://rabe.ch/klangbecken/` | `crid://rabe.ch/v1/klangbecken#t=clock=20211201T131200.00Z` |
+| - | Minimal unconstrained RaBe CRID, references RaBe as a whole without any specific and is both valid and useless | `https://rabe.ch` | `crid://rabe.ch/v1` |
 
 ## Links
 
