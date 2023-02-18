@@ -1,0 +1,12 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: crid-spec
+  description: RaBe Content Reference Identifier Specification
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: specification
+  lifecycle: experimental
+  owner: it-reaktion
