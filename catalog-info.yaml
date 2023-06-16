@@ -3,7 +3,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: crid-spec
-  title: RaBe Content Reference Identifier Specification (CRID)
+  title: RaBe CRID
   description: |
     The RaBe Content Reference Idenitifier Spcification (CRID) defines how we use
     the `crid:` URL scheme as defined by ETSI TS 102 822-4 for CRIDs that use a DNS
